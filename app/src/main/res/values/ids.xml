@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="b01" type="id" />
+    <item name="i01" type="id" />
+    <item name="n01" type="id" />
+    <item name="g01" type="id" />
+    <item name="o01" type="id" />
+    <item name="b02" type="id" />
+    <item name="i02" type="id" />
+    <item name="n02" type="id" />
+    <item name="g02" type="id" />
+    <item name="o02" type="id" />
+    <item name="b03" type="id" />
+    <item name="i03" type="id" />
+    <item name="n03" type="id" />
+    <item name="g03" type="id" />
+    <item name="o03" type="id" />
+    <item name="b04" type="id" />
+    <item name="i04" type="id" />
+    <item name="n04" type="id" />
+    <item name="g04" type="id" />
+    <item name="b05" type="id" />
+    <item name="o04" type="id" />
+    <item name="i05" type="id" />
+    <item name="n05" type="id" />
+    <item name="g05" type="id" />
+    <item name="o05" type="id" />
+    <item name="classic_card_red" type="id" />
+    <item name="classic_card_red_cpu" type="id" />
+</resources>

@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:openDrawer="end">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_table_only"
+        tools:context=".PlayerVsPlpayer">
+
+        <Button
+            android:id="@+id/random_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="112dp"
+            android:onClick="newCard"
+            android:text="@string/new_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/classic_card_red"
+            app:layout_constraintStart_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/random_number"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/random_number"
+            android:layout_width="95dp"
+            android:layout_height="44dp"
+            android:enabled="false"
+            android:onClick="display_pick"
+            android:text="@string/roll_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/classic_card_red"
+            app:layout_constraintStart_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.584" />
+
+        <Switch
+            android:id="@+id/Free_space_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:onClick="toggle_FreeSpace"
+            android:text="@string/free_space"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.754"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/classic_card_redCPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/classic_red_and_white_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/classic_card_land" />
+
+        <ImageView
+            android:id="@+id/classic_card_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/classic_red_and_white_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/classic_card_land" />
+
+        <TextView
+            android:id="@+id/b02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/b01"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/i05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/i04"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/o05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/o04"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/b05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/b04"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/n05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/n04"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/i04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/i03"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/n04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/n03"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/o04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/o03"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/i03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/i02"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/n03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/n02"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/o03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/o02"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/randVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:soundEffectsEnabled="false"
+            android:text="@string/roll_text"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/random_number"
+            app:layout_constraintEnd_toStartOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/randLetter" />
+
+        <TextView
+            android:id="@+id/i02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/i01"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/g03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/g02"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/g04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/g03"
+            app:layout_constraintVertical_bias="0.166" />
+
+        <TextView
+            android:id="@+id/g02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/g01"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/n02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/n01"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/b01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:singleLine="false"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU"
+            app:layout_constraintVertical_bias="0.226" />
+
+        <TextView
+            android:id="@+id/n01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU"
+            app:layout_constraintVertical_bias="0.226" />
+
+        <TextView
+            android:id="@+id/o01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU"
+            app:layout_constraintVertical_bias="0.226" />
+
+        <TextView
+            android:id="@+id/g01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU"
+            app:layout_constraintVertical_bias="0.226" />
+
+        <TextView
+            android:id="@+id/i01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/g05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/g04"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/o02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/o01"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/b03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/b02"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/b04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_redCPU"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toBottomOf="@+id/b03"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/letterO1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/o"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+        <TextView
+            android:id="@+id/letterG1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/g"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.701"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+        <TextView
+            android:id="@+id/letterI1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/i"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.31"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+        <TextView
+            android:id="@+id/letterN1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+        <TextView
+            android:id="@+id/letterB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+        <TextView
+            android:id="@+id/letterB2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU" />
+
+        <TextView
+            android:id="@+id/letterI2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/i"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.298"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU" />
+
+        <TextView
+            android:id="@+id/letterN2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU" />
+
+        <TextView
+            android:id="@+id/letterG2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/g"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.711"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU" />
+
+        <TextView
+            android:id="@+id/letterO2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/o"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="41sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_redCPU"
+            app:layout_constraintHorizontal_bias="0.918"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_redCPU"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_redCPU" />
+
+        <TextView
+            android:id="@+id/b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/b1"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/b3"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/i5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/i4"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/o5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/o4"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/b5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/b4"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/n5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/n4" />
+
+        <TextView
+            android:id="@+id/i4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/i3"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/n4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/n3"
+            app:layout_constraintVertical_bias="0.19" />
+
+        <TextView
+            android:id="@+id/o4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/o3"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/i3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/i2"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/n3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/n2"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/o3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/o2"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/i2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/i1"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/g3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/g2"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/g4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g4"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/g3"
+            app:layout_constraintVertical_bias="0.178" />
+
+        <TextView
+            android:id="@+id/g2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/g1"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/n2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/n1"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/i1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/i1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/o1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.226" />
+
+        <TextView
+            android:id="@+id/g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/n1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/n1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:singleLine="false"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b1"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toTopOf="@+id/classic_card_red"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/g5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/g5"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/g4"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/o2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/o2"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/o1"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <TextView
+            android:id="@+id/b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_number"
+            android:soundEffectsEnabled="false"
+            android:text="@string/b3"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/classic_card_red"
+            app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+            app:layout_constraintTop_toBottomOf="@+id/b2"
+            app:layout_constraintVertical_bias="0.122" />
+
+        <TextView
+            android:id="@+id/randLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/roll_letter"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/random_number"
+            app:layout_constraintEnd_toStartOf="@+id/classic_card_red"
+            app:layout_constraintHorizontal_bias="0.429"
+            app:layout_constraintStart_toEndOf="@+id/classic_card_redCPU" />
+
+        <ImageView
+            android:id="@+id/props"
+            android:layout_width="768dp"
+            android:layout_height="394dp"
+            android:contentDescription="@string/props"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/props_only" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:itemTextColor="@android:color/holo_red_dark"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
