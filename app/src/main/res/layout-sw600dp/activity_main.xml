@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:openDrawer="end">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="300dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/randLetter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roll_letter"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/randVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/roll_text"
+                    android:textColor="@android:color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--
+            <ImageView
+                android:id="@+id/classic_card_red"
+                android:layout_width="380dp"
+                android:layout_height="450dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/classic_red_and_white_card"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/classic_card_tab" />
+
+
+            <TextView
+                android:id="@+id/LetterB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/b"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="@+id/classic_card_red"
+                app:layout_constraintTop_toTopOf="@id/classic_card_red" />
+
+            <TextView
+                android:id="@+id/LetterI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintStart_toEndOf="@+id/LetterB"
+                app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+            <TextView
+                android:id="@+id/LetterN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/n"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toEndOf="@+id/LetterI"
+                app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+            <TextView
+                android:id="@+id/LetterG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/g"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toEndOf="@+id/LetterN"
+                app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+
+            <TextView
+                android:id="@+id/LetterO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/classic_card_red"
+                app:layout_constraintStart_toEndOf="@+id/LetterG"
+                app:layout_constraintTop_toTopOf="@+id/classic_card_red" />
+                -->
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:columnCount="5"
+                android:orientation="horizontal"
+                android:rowCount="5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/left_corner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/left_corner" />
+
+                <TextView
+                    android:id="@+id/b1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="click_number"
+                    android:soundEffectsEnabled="false"
+                    android:text="@string/b1"
+                    android:textColor="@android:color/black"
+                    android:textSize="41sp"
+                    android:layout_row="0"
+                    android:layout_column="0"/>
+
+                <ImageView
+                    android:id="@+id/top1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/top" />
+
+                <ImageView
+                    android:id="@+id/top2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/top" />
+
+                <ImageView
+                    android:id="@+id/top3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/top" />
+
+                <ImageView
+                    android:id="@+id/right_corner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="4"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/right_corner" />
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/free_space_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toggle_FreeSpace"
+                android:text="@string/free_space"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:id="@+id/random_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="display_pick"
+                android:text="@string/roll_button" />
+
+            <Button
+                android:id="@+id/random_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="newCard"
+                android:text="@string/new_card" />
+
+            <Button
+                android:id="@+id/options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openNavDrawer"
+                android:text="@string/options" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:itemTextColor="@android:color/holo_red_dark"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
