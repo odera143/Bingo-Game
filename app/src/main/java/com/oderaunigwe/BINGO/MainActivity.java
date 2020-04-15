@@ -377,7 +377,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             freeSpace.setText("FREE\nSPACE");
             freeSpace.setTextColor(Color.RED);
-            freeSpace.setTextSize(13);
+
+            if(freeSpace.getTextSize() == 41) {
+                freeSpace.setTextSize(40);
+            }else   {
+                freeSpace.setTextSize(13);
+            }
 
             table[2][2] = 0;
         }
